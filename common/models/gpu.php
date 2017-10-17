@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "gpu".
  *
  * @property integer $id
- * @property integer $member_jd
+ * @property integer $member_id
  * @property string $gpu_name
  */
 class gpu extends \yii\db\ActiveRecord
@@ -27,8 +27,8 @@ class gpu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['member_jd', 'gpu_name'], 'required'],
-            [['member_jd'], 'integer'],
+            [['member_id', 'gpu_name'], 'required'],
+            [['member_id'], 'integer'],
             [['gpu_name'], 'string', 'max' => 255],
             [['gpu_name'], 'unique'],
         ];

@@ -15,7 +15,8 @@ use common\models\User;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'member_id')->dropDownList(
-            ArrayHelper::map(User::find()->all(), 'id', 'username')
+            ArrayHelper::map(User::find()->all(),'id', 'username'),
+            ['prompt' => 'Select User']
     ) ?>
 
     <?= $form->field($model, 'gpu_name')->textInput(['maxlength' => true]) ?>
